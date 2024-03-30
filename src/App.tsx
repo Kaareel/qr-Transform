@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import StartPage from "./page/StartPage";
+import QRViewPage from "./page/QRViewPage";
+
+type Scoring = "startPage" | "qrviewpage";
 
 function App() {
+  const [qrData, setQrData] = useState("");
+  const [view, setView] = useState<Scoring>("startPage");
+  const [outputValue, setOutputValue] = useState("");
+  
+
+  const turnPage = () => {
+    setView("qrviewpage");
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {view === "startPage" && <StartPage qrData={qrData} setQrData={setQrData} outputValue={outputValue} setOutputValue={setOutputValue} turnPage={turnPage}/>}
+      {view === "qrviewpage" && <QRViewPage outputValue={outputValue}/>}
     </div>
   );
 }
