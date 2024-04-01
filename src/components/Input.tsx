@@ -16,8 +16,10 @@ function Input(props: Props) {
         value={props.value}
         onChange={props.onChange}
       />
-      {props.isInput && <p className="text-red-500">El campo no puede estar vacío</p>}
-      {props.isUrl && <p className="text-red-500">El url es inválido</p>}
+      {props.isInput && (
+        <p className="text-red-500">The field cannot be empty</p>
+      )}
+      {props.isUrl && <p className="text-red-500">The url is invalid</p>}
     </div>
   );
 }
