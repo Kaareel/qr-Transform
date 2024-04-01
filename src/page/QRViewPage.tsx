@@ -20,8 +20,8 @@ function QRViewPage(props: Props) {
           />
         </div>
         <div className="flex flex-col justify-center items-center m-5">
-            <Title title="Improve your front-end skills by building projects"/>
-            <Description description="Scan th QR code to visit Frontend Mentor and take your coding skills to the next level"/>
+            <Title title="QR Converter"/>
+            <Description description="Scan the QR code to access the provided URL"/>
         </div>
       </div>
     </div>
